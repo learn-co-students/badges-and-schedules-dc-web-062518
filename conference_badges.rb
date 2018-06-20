@@ -21,11 +21,17 @@ def assign_rooms(attendees)
 end
     
 def printer(attendees)
+  copy = attendees
   str1 = nil
   str2 = nil
-    str1 = batch_badge_creator().shift
-    str2 = assign_rooms().shift
+  n = 0
+  count = attendees.size
+  until n == count
+    str1 = batch_badge_creator(attendees).shift
+    str2 = assign_rooms(copy).shift
+    attendees.shift
     puts str1
     puts str2
-
+    n+=1
+  end
 end
