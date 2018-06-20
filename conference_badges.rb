@@ -7,7 +7,7 @@ def batch_badge_creator(attendees)
   attendees.each do |a|
     arr << badge_maker(a)
   end
-arr
+  arr
 end
 
 def assign_rooms(attendees)
@@ -21,6 +21,11 @@ def assign_rooms(attendees)
 end
     
 def printer(attendees)
-  puts batch_badge_creator(attendees)
-  puts assign_rooms(attendees)
+  str1 = nil
+  str2 = nil
+    str1 = batch_badge_creator().shift
+    str2 = assign_rooms().shift
+    puts str1
+    puts str2
+
 end
